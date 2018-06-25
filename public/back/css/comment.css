@@ -1,0 +1,12 @@
+.panel-heading {
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  font-size: 20px;
+}
+.mt_150 {
+  margin-top: 150px;
+}
+.login_bgc {
+ background-color: #222d32;
+}
