@@ -130,7 +130,7 @@ ul {
   height: 1000px;
   margin-top: 50px;
   margin-left: 180px;
-  background-color: pink;
+  background-color: #fff;
   padding:  15px;
   transition: all 1s;
   padding-bottom: 20px;
@@ -141,6 +141,24 @@ ul {
 .content-bottom ol {
   top:20px;
 }
+
+
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
