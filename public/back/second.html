@@ -40,12 +40,31 @@
     <div class="content-bottom">
       <ol class="breadcrumb">
           <li><a href="index.html">管理系统</a></li>
-          <li class="active">商品管理</li>
+          <li class="active">分类管理</li>
+          <li class="active">二级分类</li>
       </ol>
+      <button type="button" class="btn btn-default" id="addBtn1">添加分类</button>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>一级分类名称</th>
+            <th>二级分类名称</th>
+            <th>耳机分类LOGO</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- 模态框 -->
+
+
+<img src="" alt="">
+
+  <!-- 模态框1 -->
   <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" >
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -66,9 +85,28 @@
       </div>
     </div>
   </div>
+  <script type="text/html" id="tmp">
+    {{ each rows v i }}
+      <tr>
+        <td>{{ i + 1 + (page-1)*size}}</td>
+        <td>{{ v.categoryName }}</td>
+        <td>{{ v.brandName }}</td>
+        <td>
+          <img src="{{ v.brandLogo }}">
+        </td>
+      </tr>
+    {{ /each }}
+  </script>
+
+
+
   <script src="./lib/jquery/jquery.min.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
   <script src="./js/comment.js"></script>
+  <script src="./js/second.js"></script>
 </body>
 </html>

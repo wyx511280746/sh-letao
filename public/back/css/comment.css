@@ -148,7 +148,8 @@ ul {
   text-align: center;
   vertical-align: middle;
 }
-#addBtn {
+#addBtn,
+#addBtn1 {
   margin-bottom: 20px;
 }
 
