@@ -31,24 +31,27 @@ $(function () {
   }
   //点击按钮事件
   $('tbody').on('click','.btn',function () {
-    $('#mymyModal2').modal('show');
+    $('#myModal2').modal('show');
     // 记录当前的用户id
     currentId = $(this).parent().data('id');
     // console.log(currentId);
     isDelete = $(this).hasClass('btn-danger')? 0 : 1 ;
     // console.log(isDelete);
-    $.ajax({
-      type:"post",
-      url:"/user/updateUser",
-      dataType:'json',
-      data : {
-        id:currentId,
-        isDelete:isDelete
-      },
-      success:function (info) {  
-        // console.log(info);
-        render();
-      }
+    $('#logoutBtn2').on('click',function () {
+      $.ajax({
+        type:"post",
+        url:"/user/updateUser",
+        dataType:'json',
+        data : {
+          id:currentId,
+          isDelete:isDelete
+        },
+        success:function (info) {  
+          // console.log(info);
+          render();
+        }
+      })
+      $('#myModal2').modal('hide');
     })
   })
 
