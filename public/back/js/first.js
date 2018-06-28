@@ -55,32 +55,33 @@ $(function () {
             }  
         },
     }  
-});  
-//使用ajax提交表单
-$('#form').on('success.form.bv',function (e) {
-    //阻止表单提交
-  e.preventDefault();
-  console.log('阻止完成');
-  var categoryName = $('#classify1').val();
-  console.log(categoryName)
-  //通过ajax提交
-  $.ajax({
-      type:'post',
-      url:'/category/addTopCategory',
-      data:{
-        categoryName:categoryName
-      },
-      dataType:"json",
-      success : function (info) {  
-        render();
-        $('#myModal2').modal('hide');
-        //表单重置
-        $('#form').data('bootstrapValidator').resetForm(true);
-      }
+  });  
+  
+  //使用ajax提交表单
+  $('#form').on('success.form.bv',function (e) {
+      //阻止表单提交
+    e.preventDefault();
+    console.log('阻止完成');
+    var categoryName = $('#classify1').val();
+    console.log(categoryName)
+    //通过ajax提交
+    $.ajax({
+        type:'post',
+        url:'/category/addTopCategory',
+        data:{
+          categoryName:categoryName
+        },
+        dataType:"json",
+        success : function (info) {  
+          render();
+          $('#myModal2').modal('hide');
+          //表单重置
+          $('#form').data('bootstrapValidator').resetForm(true);
+        }
+
+    })
 
   })
-
-})
 
 
 })
